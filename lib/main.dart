@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:oduck/common/bottom_nav_bar.dart';
 
 import 'config/theme.dart';
 
@@ -31,6 +32,8 @@ class MyApp extends ConsumerWidget {
 
         /// Localization stuff
         debugShowCheckedModeBanner: false,
-        home: const Scaffold());
+        home: const MainNavigationScreen(
+          tab: '찾기',
+        ));
   }
 }

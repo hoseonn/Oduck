@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
+import 'package:oduck/features/map/view/map_screen.dart';
 
 import 'widget/bottom_nav_tab.dart';
 
@@ -43,11 +44,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
         children: [
           Offstage(
             offstage: _selectedIndex != 0,
-            child: const Scaffold(
-              body: Center(
-                child: Text("1"),
-              ),
-            ),
+            child: const MapScreen(),
           ),
           Offstage(
             offstage: _selectedIndex != 1,

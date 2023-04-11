@@ -4,6 +4,16 @@
         android:label="oduck"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+        
+ 	<!-- 위치 정보 엑세스 권한 요청 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/> 
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+ 
+       <!-- TODO: Add your API key here -->
+       <meta-data android:name="com.google.android.geo.API_KEY"
+           android:value="AIzaSyCMiRY0RlxyBhL3RvajKlIDaFfc0kdnqkA"/> 
+ 
+        
         <activity
             android:name=".MainActivity"
             android:exported="true"

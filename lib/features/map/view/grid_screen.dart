@@ -12,8 +12,9 @@ class GridScreen extends StatelessWidget {
       ),
       child: Scaffold(
         appBar: AppBar(
-          title: const Text(
+          title: Text(
             "한 눈에 보기",
+            style: Theme.of(context).appBarTheme.titleTextStyle,
           ),
           backgroundColor: Colors.transparent,
           shadowColor: Colors.transparent,

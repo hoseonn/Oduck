@@ -23,27 +23,24 @@ class BottomNavTab extends StatelessWidget {
     return Expanded(
       child: GestureDetector(
         onTap: () => onTap(),
-        child: Container(
-          color: Colors.white,
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Icon(
-                icon,
-                color: isSelected ? primaryColor : textSwatch.shade900,
-                size: 30,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Icon(
+              icon,
+              color: isSelected ? primaryColor : null,
+              size: 30,
+            ),
+            const SizedBox(
+              height: 3,
+            ),
+            Text(
+              text,
+              style: TextStyle(
+                color: isSelected ? primaryColor : null,
               ),
-              const SizedBox(
-                height: 3,
-              ),
-              Text(
-                text,
-                style: TextStyle(
-                  color: isSelected ? primaryColor : textSwatch.shade900,
-                ),
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

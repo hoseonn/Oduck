@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:oduck/common/bottom_nav_bar.dart';
 import 'package:oduck/features/profile/repo/darkmode_repo.dart';
 import 'package:oduck/features/profile/view_model/darkMode_view_model.dart';
@@ -10,6 +11,11 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  final status = await Geolocator.checkPermission();
+  if (status == LocationPermission.denied) {
+    await Geolocator.requestPermission();
+  }
 
   final preference = await SharedPreferences.getInstance();
   final repository = DarkModeRepository(preference);

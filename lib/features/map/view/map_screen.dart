@@ -3,8 +3,7 @@ import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:oduck/features/map/view/grid_screen.dart';
-
-import '../../../config/theme.dart';
+import 'package:oduck/features/map/view/widget/action_button.dart';
 
 class MapScreen extends StatefulWidget {
   const MapScreen({Key? key}) : super(key: key);
@@ -65,33 +64,32 @@ class _MapScreenState extends State<MapScreen> {
               target: _center,
               zoom: 12.0,
             ),
-          ),
-          Positioned(
-            bottom: 80,
-            right: 10,
-            child: FloatingActionButton(
-              onPressed: _onGridTap,
-              foregroundColor: primaryColor,
-              backgroundColor: Colors.white,
-              elevation: 8,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10), // 버튼 모서리 둥글기
-              ), // 그림자 크기
-              child: const Icon(Ionicons.grid),
+            markers: Set<Marker>.of(
+              {
+                const Marker(
+                  markerId: MarkerId("marker_1"),
+                  position: LatLng(37.5506027, 126.9116103),
+                  infoWindow: InfoWindow(
+                    title: "dddd",
+                  ),
+                ),
+              },
             ),
           ),
-          Positioned(
+          ActionButton(
+            bottom: 80,
+            function: _onGridTap,
+            backgroundColor: const Color(0xFF303030),
+            icon: const Icon(
+              Ionicons.grid,
+            ),
+          ),
+          ActionButton(
             bottom: 16,
-            right: 10,
-            child: FloatingActionButton(
-              onPressed: _getCurrentLocation,
-              foregroundColor: primaryColor,
-              backgroundColor: Colors.white,
-              elevation: 8,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10), // 버튼 모서리 둥글기
-              ), // 그림자 크기
-              child: const Icon(Ionicons.location),
+            function: _getCurrentLocation,
+            backgroundColor: const Color(0xFF303030),
+            icon: const Icon(
+              Icons.my_location_rounded,
             ),
           ),
         ],

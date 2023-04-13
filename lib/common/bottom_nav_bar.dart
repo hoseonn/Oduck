@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:oduck/features/map/view/map_screen.dart';
+import 'package:oduck/features/profile/profile_screen.dart';
 
 import 'widget/bottom_nav_tab.dart';
 
@@ -21,8 +22,6 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
   final List<String> _tabs = [
     'home',
     'discover',
-    'xxxx',
-    'inbox',
     'profile',
   ];
 
@@ -39,7 +38,6 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: Colors.white,
       body: Stack(
         children: [
           Offstage(
@@ -56,16 +54,11 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
           ),
           Offstage(
             offstage: _selectedIndex != 2,
-            child: const Scaffold(
-              body: Center(
-                child: Text("3"),
-              ),
-            ),
+            child: const ProfileScreen(),
           ),
         ],
       ),
       bottomNavigationBar: Container(
-        color: Colors.white,
         padding: const EdgeInsets.only(
           bottom: 32,
         ),

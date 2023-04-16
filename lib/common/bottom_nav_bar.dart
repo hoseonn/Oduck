@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:oduck/features/map/view/map_screen.dart';
-import 'package:oduck/features/notification/notification_screen.dart';
+import 'package:oduck/features/news/news_screen.dart';
 import 'package:oduck/features/profile/profile_screen.dart';
 
 import 'widget/bottom_nav_tab.dart';
@@ -76,7 +76,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
                 selectedIndex: _selectedIndex,
               ),
               BottomNavTab(
-                text: '알림',
+                text: '소식',
                 isSelected: _selectedIndex == 1,
                 icon: Ionicons.notifications_outline,
                 onTap: () => _onTap(1),

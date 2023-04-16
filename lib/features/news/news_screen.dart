@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:oduck/features/notification/widgets/tab_bar.dart';
+import 'package:oduck/features/news/widgets/postcard.dart';
+import 'package:oduck/features/news/widgets/tab_bar.dart';
 
 class NotificationScreen extends StatefulWidget {
   final String tab;
@@ -30,12 +31,17 @@ class _NotificationScreenState extends State<NotificationScreen> {
                 ),
               ];
             },
-            body: const TabBarView(
+            body: TabBarView(
               children: [
                 Center(
-                  child: Text("page 1"),
+                  child: ListView.builder(
+                    itemCount: 20,
+                    itemBuilder: (context, index) {
+                      return const PostCard();
+                    },
+                  ),
                 ),
-                Center(
+                const Center(
                   child: Text("page 2"),
                 ),
               ],

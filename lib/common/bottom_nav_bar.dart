@@ -21,8 +21,8 @@ class MainNavigationScreen extends StatefulWidget {
 
 class _MainNavigationScreenState extends State<MainNavigationScreen> {
   final List<String> _tabs = [
-    'home',
-    'discover',
+    'map',
+    'news',
     'profile',
   ];
 

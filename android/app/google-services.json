@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "549952737891",
+    "project_id": "oduck-383400",
+    "storage_bucket": "oduck-383400.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:549952737891:android:8c599884c5c29696e01e56",
+        "android_client_info": {
+          "package_name": "com.example.oduck"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "549952737891-pc88dgtdfj0n9oa2vlpjeelnvo26is3b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCMiRY0RlxyBhL3RvajKlIDaFfc0kdnqkA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "549952737891-pc88dgtdfj0n9oa2vlpjeelnvo26is3b.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "549952737891-gqm2i1qlu96bfj40cip1ia9nt4p54sae.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.oduck"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

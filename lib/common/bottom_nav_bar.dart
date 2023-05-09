@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:oduck/features/map/view/map_screen.dart';
 import 'package:oduck/features/news/news_screen.dart';
@@ -29,7 +30,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
   late int _selectedIndex = _tabs.indexOf(widget.tab);
 
   void _onTap(int index) {
-    // context.go("/${_tabs[index]}");
+    context.go("/${_tabs[index]}");
     setState(() {
       _selectedIndex = index;
     });

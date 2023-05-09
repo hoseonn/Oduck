@@ -128,6 +128,7 @@ class _MapScreenState extends State<MapScreen> {
             markers: _markers,
           ),
           ActionButton(
+            tag: "grid",
             bottom: 80,
             function: _onGridTap,
             backgroundColor: const Color(0xFF303030),
@@ -136,6 +137,7 @@ class _MapScreenState extends State<MapScreen> {
             ),
           ),
           ActionButton(
+            tag: "current",
             bottom: 16,
             function: _tapCurrentLocation,
             backgroundColor: const Color(0xFF303030),

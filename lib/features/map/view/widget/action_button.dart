@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:oduck/config/theme.dart';
 
 class ActionButton extends StatelessWidget {
+  final String tag;
   final double bottom;
   final Function function;
   final Color backgroundColor;
@@ -12,15 +13,17 @@ class ActionButton extends StatelessWidget {
     required this.bottom,
     required this.function,
     required this.backgroundColor,
-    required this.icon,
+    required this.icon, required this.tag,
   });
 
   @override
   Widget build(BuildContext context) {
     return Positioned(
+      
       bottom: bottom,
       right: 10,
       child: FloatingActionButton(
+        heroTag: tag,
         onPressed: () => function(),
         foregroundColor: primaryColor,
         backgroundColor: backgroundColor,

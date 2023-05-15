@@ -8,7 +8,7 @@ import 'features/authentication/view/login_screen.dart';
 final routerProvider = Provider((ref) {
   // ref.watch(authState);
   return GoRouter(
-    initialLocation: "/login",
+    initialLocation: "/map",
     redirect: (context, state) {
       final isLoggedIn = ref.read(authRepo).isLoggedIn;
       if (!isLoggedIn) {

@@ -7,6 +7,7 @@ class AuthenticationRepository {
 
   bool get isLoggedIn => user != null;
   final GoogleSignIn googleSignIn = GoogleSignIn();
+  GoogleSignInAccount? googleUser;
   User? get user => _firebaseAuth.currentUser;
 
   Stream<User?> authStateChanges() => _firebaseAuth.authStateChanges();
@@ -18,7 +19,7 @@ class AuthenticationRepository {
 
   Future<UserCredential> signInWithGoogle() async {
     // Trigger the authentication flow
-    final GoogleSignInAccount? googleUser = await googleSignIn.signIn();
+    googleUser = await googleSignIn.signIn();
 
     // Obtain the auth details from the request
     final GoogleSignInAuthentication? googleAuth =
@@ -29,6 +30,10 @@ class AuthenticationRepository {
       accessToken: googleAuth?.accessToken,
       idToken: googleAuth?.idToken,
     );
+
+    if (googleUser == null) {
+      // null 일경우 처리
+    }
 
     // Once signed in, return the UserCredential
     return await FirebaseAuth.instance.signInWithCredential(credential);

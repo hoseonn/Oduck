@@ -3,7 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:oduck/features/map/view/map_screen.dart';
 import 'package:oduck/features/news/news_screen.dart';
-import 'package:oduck/features/profile/profile_screen.dart';
+import 'package:oduck/features/profile/view/profile_screen.dart';
 
 import 'widget/bottom_nav_tab.dart';
 

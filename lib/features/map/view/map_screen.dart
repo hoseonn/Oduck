@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:custom_marker/marker_icon.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:ionicons/ionicons.dart';
@@ -10,14 +11,16 @@ import 'package:oduck/features/map/view/grid_screen.dart';
 import 'package:oduck/features/map/view/widget/action_button.dart';
 import 'package:oduck/features/map/view/widget/location_info.dart';
 
-class MapScreen extends StatefulWidget {
+import '../../profile/view_model/users_view_model.dart';
+
+class MapScreen extends ConsumerStatefulWidget {
   const MapScreen({Key? key}) : super(key: key);
 
   @override
-  State<MapScreen> createState() => _MapScreenState();
+  ConsumerState<MapScreen> createState() => _MapScreenState();
 }
 
-class _MapScreenState extends State<MapScreen> {
+class _MapScreenState extends ConsumerState<MapScreen> {
   final Completer<GoogleMapController> _mapController = Completer();
 
   late LatLng current = const LatLng(0, 0);
@@ -40,7 +43,7 @@ class _MapScreenState extends State<MapScreen> {
         Marker(
           markerId: const MarkerId("currentLocation"),
           icon: await MarkerIcon.downloadResizePictureCircle(
-              'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwmVE8Ep8HFFzwble3NCWLT0KAIs5kclv_AA&usqp=CAU',
+              ref.watch(usersProvider).value!.imageUrl,
               size: 150,
               addBorder: true,
               borderColor: primaryColor,
